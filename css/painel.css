@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700|Open+Sans:300,400,600,700|Roboto:300,400,500,700');
+*, *::before, *::after{
+   padding:0;
+   margin:0;
+   box-sizing: border-box; 
+}
+html, body{
+    font-family: "Lato", sans-serif;
+    font-size: 62.5%; /*62.5% = 10px*/
+    height: 100vh;
+}
+#main{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    background-color: green;
+    height: auto;
+}
+#sidebar-menu{
+    position: absolute;
+    background-color: blue;
+    font-size: 1.6rem; /*16*0,75=12px*/
+    width: 200px; 	/*width: 150px; /* flex: 0 1 150px */
+    height: 100%;
+    transition: width .55s ease;
+}
+#navegation{
+    position: absolute;
+    width: 100%;
+}
+#navegation ul.navegation-list{
+    list-style: none;
+}
+#navegation ul.navegation-list li{
+    display: block;
+    padding:5px 0;
+}
+#navegation ul.navegation-list li:last-child{
+    margin-top:120px;
+    background: green;
+}
+#navegation a{
+    text-decoration: none;
+    background: black;
+    display: block;
+}
+.icon-menu,
+.text-menu{
+    display: inline-block;
+}
+.icon-menu{
+    background:red;
+    margin:0 8px;
+    width: 40px;
+    text-align: center;
+}
+.icon-menu i{
+    font-size:2.8rem;
+    vertical-align: middle;
+}
+.text-menu{
+    display: inline-block;
+	font:15px "Lato", sans-serif;
+	text-transform:uppercase;
+	vertical-align:middle;
+	color:#fff;
+}
+#sidebar-menu.closed-menu .text-menu{
+    display:none;
+}
+#content{
+    background-color: red;	
+    flex-basis: calc(100% - 200px); /*width: calc(100% - 150px);*/	
+    position: relative;
+    left:200px;		
+    height: auto;
+    transition: left .55s ease;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+#header-top{
+    background-color: black;
+    width:100%;
+    /*height: 80px;*/
+    padding:5px 0 8px 0;
+    position: relative;
+}
+#content p{
+    padding:1rem;
+    font-size:1.6rem;
+    height: 500px;
+}
+
+
+/*linha que comporta 3 blocos ou celulas
+.row{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;*/
+    /*grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));*/
+    /*lign-items: center;
+    grid-gap: 15px;
+    margin:15px;
+}*/
+/*col com 3 blocos ou celulas
+.col-3{
+    background-color:blue;
+    padding:20px;
+    font-size:14px;
+}*/
+
+.grid{
+    display: grid;
+}
+.grid-col-3{
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    grid-gap:15px;
+    margin:15px;
+}
+.grid-col-2{
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    grid-gap:15px;
+    margin:15px;
+}
+.widget{
+    background-color: blue;
+    padding:20px;
+    font-size:14px;
+}
+.btn-menu{
+    text-decoration: none;
+    font-size:2.8rem;
+    vertical-align: middle;
+    margin:0px 20px;
+    color:#FFF;
+    display: inline-block;
+}
+#formBusca{
+    display: inline-block;
+    position: relative;
+}
+.input-busca{
+    height: 40px;
+    vertical-align: middle;
+    padding-left:10px;
+    padding-right: 60px;
+    font-size:1.6rem;
+    width: 500px;
+    border:0px;
+    cursor:pointer;
+    border-radius: 30px;
+    outline: none;
+    transition: width .55s ease;
+}
+.input-busca:focus{
+    width: 800px;
+}
+.btn-busca{
+    position: absolute;
+    right:0;
+    top:0;
+    line-height: 40px;
+    padding:0 12px;
+    margin-right:5px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border:0;
+    box-sizing: border-box;
+    outline: none;
+    cursor:pointer;
+    vertical-align: middle;
+    background: transparent;
+}
+.btn-busca i{
+    font-size:18px;
+}
+.fechado-menu{
+    width: 55px !important;
+}
+.redimensionando{
+    flex-basis: calc(100% - 55px) !important;
+    position: relative;
+    left:55px !important;
+}
+.menu-fixo{
+    position:fixed;
+    top:0;
+    z-index: 9999;
+}
+.top-menu{
+    list-style: none;
+    position: absolute;
+    right: 0;
+    display: inline-block;
+    background: red;
+    vertical-align: middle;
+    margin: 10px 15px;
+}
+.top-menu li{
+    font-size:1.5rem;
+    color:#FFF;
+}
